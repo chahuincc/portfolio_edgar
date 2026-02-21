@@ -1,14 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 :root {
-  --glass-bg: rgba(78, 106, 127, 0.7);
-  /* #4e6a7f with transparency for blur */
+  --bg-primary: #00205B;
+  --bg-secondary: #672170;
+  --accent: #C10071;
+  --text-light: #FFFFFF;
+  --accent-warm: #F05E23;
+  --glass-bg: rgba(0, 32, 91, 0.7);
+
   font-family: 'Rajdhani', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color-scheme: dark;
+  color: var(--text-light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,12 +26,12 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--accent);
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #535bf2;
+  color: #fff;
 }
 
 body {
@@ -40,12 +48,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4e6a7f;
+  background-color: var(--bg-primary);
   background-image:
-    radial-gradient(circle at 15% 50%, #4e6a7f 0%, transparent 50%),
-    radial-gradient(circle at 85% 30%, #2a3d4f 0%, transparent 50%),
-    radial-gradient(circle at 50% 90%, #3d5a6f 0%, transparent 50%),
-    radial-gradient(circle at 50% 10%, #1a2d3f 0%, transparent 50%);
+    radial-gradient(circle at 15% 50%, var(--bg-secondary) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, var(--bg-primary) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, var(--accent-warm) 0%, transparent 50%),
+    radial-gradient(circle at 50% 10%, var(--bg-primary) 0%, transparent 50%);
   filter: blur(80px);
   z-index: -1;
 }
@@ -57,23 +65,25 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--accent);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  color: #fff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
 }
 
 button:hover {
-  border-color: #646cff;
+  background-color: var(--accent);
+  color: var(--bg-primary);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--accent);
 }
 
 @media (prefers-color-scheme: light) {

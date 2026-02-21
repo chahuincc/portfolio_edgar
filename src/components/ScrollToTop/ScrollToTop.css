@@ -18,13 +18,13 @@
 .scroll-to-top button {
     width: 60px;
     height: 60px;
-    background: #000000;
+    background: var(--bg-primary);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--accent);
     border-radius: 0;
     /* Square shape */
-    color: white;
+    color: var(--accent);
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;

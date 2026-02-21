@@ -63,42 +63,62 @@
 }
 
 .footer-links a {
-    color: white;
+    color: var(--text-light);
     text-decoration: none;
-    opacity: 0.6;
+    opacity: 0.8;
     font-weight: 300;
     font-size: 1.1rem;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
+    color: var(--accent);
     opacity: 1;
 }
 
 .social-icons {
-    display: grid;
-    grid-template-columns: repeat(2, 45px);
-    gap: 1rem;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .social-icon {
     width: 45px;
     height: 45px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-icon img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-50%) rotate(5deg);
+    /* Re-evaluating this based on context, but let's stick to translateY initially */
 }
+
+.social-icon:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.social-icon:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 
 .footer-divider {
     border: 0;

@@ -1,21 +1,47 @@
-import { useState } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Menu from './components/Menu/Menu'
 import Hero from './components/Hero/Hero'
+import About from './components/About/About'
 import Services from './components/Services/Services'
 import Footer from './components/Footer/Footer'
+import Projects from './components/Projects/Projects'
+import Trayectoria from './components/Trayectoria/Trayectoria'
+import Contacto from './components/Contacto/Contacto'
+import Blog from './components/Blog/Blog'
+import ServicesDetail from './components/ServicesDetail/ServicesDetail'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const ScrollToTopOnNavigate = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
+const Home = () => (
+  <>
+    <Hero />
+    <About />
+    <Services />
+  </>
+)
+
+function App() {
   return (
     <>
+      <ScrollToTopOnNavigate />
       <Menu />
-      <Hero />
-      <Services />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/trayectoria" element={<Trayectoria />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/services" element={<ServicesDetail />} />
+      </Routes>
       <Footer />
       <ScrollToTop />
     </>

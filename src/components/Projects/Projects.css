@@ -1,0 +1,181 @@
+.projects-page {
+    background: transparent;
+    min-height: 100vh;
+    color: #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    /* Offset for fixed menu */
+    display: flex;
+    flex-direction: column;
+}
+
+.projects-bg-text {
+    position: absolute;
+    top: 5%;
+    /* Moved slightly up as requested */
+    left: 5%;
+    font-size: 15rem;
+    font-weight: 700;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.project-detail-container {
+    display: flex;
+    padding: 2rem 10%;
+    gap: 5%;
+    align-items: center;
+    flex: 1;
+    z-index: 1;
+}
+
+.project-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.project-main-title {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.project-main-title span {
+    color: var(--accent);
+    opacity: 0.8;
+}
+
+.project-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-hashtag {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.project-image-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.project-image-preview img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.horizontal-scroll-container {
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.scroll-header {
+    padding: 0 10% 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.scroll-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent);
+}
+
+.scroll-subtitle {
+    font-size: 1rem;
+    opacity: 0.4;
+    letter-spacing: 2px;
+}
+
+.projects-grid-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0;
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
+}
+
+.projects-grid-scroll::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for Chrome/Safari */
+}
+
+.project-thumbnail {
+    flex: 0 0 350px;
+    height: 450px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex 0.5s ease;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.7);
+    transition: all 0.5s ease;
+}
+
+.project-thumbnail.active img,
+.project-thumbnail:hover img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.05);
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    z-index: 2;
+}
+
+.thumbnail-title {
+    font-size: 2rem;
+    font-weight: 700;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+    .project-detail-container {
+        flex-direction: column;
+        padding-top: 2rem;
+    }
+
+    .project-image-preview img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .projects-bg-text {
+        font-size: 10rem;
+    }
+}

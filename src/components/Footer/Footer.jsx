@@ -1,5 +1,7 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
+
 
 const Footer = () => {
     return (
@@ -11,45 +13,54 @@ const Footer = () => {
                         <span className="logo-text">STUDIO</span>
                     </div>
                     <p className="footer-slogan">
-                        Let's create something<br />
-                        extraordinary together!
+                        Comuniquese, estare encantado de ayudarte.
+
                     </p>
                 </div>
 
                 <div className="footer-section links-section">
-                    <h4 className="section-title">MAIN</h4>
+                    <h4 className="section-title">PRINCIPAL</h4>
                     <ul className="footer-links">
-                        <li><a href="#works">Works</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
+                        <li className="menu-item"><Link to="/projects">Proyectos</Link></li>
+                        <li className="menu-item"><Link to="/services">Servicios</Link></li>
+                        <li className="menu-item"><Link to="/contacto">Sobre mi</Link></li>
+                        {/* <li className="menu-item"><Link to="/pricing">Precios</Link></li> */}
                     </ul>
                 </div>
 
                 <div className="footer-section links-section">
-                    <h4 className="section-title">SUPPORT</h4>
+                    <h4 className="section-title">AYUDA</h4>
                     <ul className="footer-links">
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#terms">Terms & Condition</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#disclosures">Disclosures</a></li>
+                        <li className="menu-item"><Link to="/">Inicio</Link></li>
+                        <li className="menu-item"><Link to="/projects">Proyectos</Link></li>
+                        <li className="menu-item"><Link to="/trayectoria">Trayectoria</Link></li>
+                        <li className="menu-item"><Link to="/contacto">Contacto</Link></li>
+                        <li className="menu-item"><Link to="/blog">Blog</Link></li>
                     </ul>
                 </div>
 
                 <div className="footer-section socials-section">
-                    <h4 className="section-title">SOCIALS</h4>
+                    <h4 className="section-title">REDES</h4>
                     <div className="social-icons">
-                        <a href="https://behance.net" className="social-icon">B</a>
-                        <a href="https://dribbble.com" className="social-icon">D</a>
-                        <a href="https://instagram.com" className="social-icon">I</a>
-                        <a href="https://twitter.com" className="social-icon">T</a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <img src="/linkedin-svgrepo-com.svg" alt="Linkedin" />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <img src="/instagram-svgrepo-com.svg" alt="Instagram" />
+                        </a>
+                        <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <img src="/whatsapp-logo-thin-svgrepo-com.svg" alt="Whatsapp" />
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+                            <img src="/tiktok-outline-svgrepo-com.svg" alt="TikTok" />
+                        </a>
                     </div>
                 </div>
             </div>
             <div className="footer-bottom">
                 <hr className="footer-divider" />
                 <div className="footer-legal">
-                    <p>&copy; {new Date().getFullYear()} Studio. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Edgar_dev. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

@@ -28,7 +28,7 @@
     margin: 0;
     line-height: 1;
     letter-spacing: -5px;
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 .hero-text-content {
@@ -92,15 +92,17 @@
     align-items: flex-end;
     justify-content: flex-end;
     height: 100%;
+
 }
 
 .hero-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
     /* Grayscale filter to match the mood of the reference image */
     filter: grayscale(100%) contrast(1.1);
@@ -112,11 +114,11 @@
     right: 0;
     width: 100%;
     height: 40%;
-    background: rgba(64, 224, 208, 0.6);
-    /* Turquoise/Cyan overlay */
+    background: var(--accent);
+    opacity: 0.5;
+    /* --accent with transparency */
     z-index: 2;
     mix-blend-mode: multiply;
-    /* Helps blend with the image */
 }
 
 /* Specific adjustment for the reference layout */
@@ -124,10 +126,10 @@
     content: '';
     position: absolute;
     bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 45%;
-    background: #50e3c2;
+    left: 0;
+    width: 80%;
+    height: 40%;
+    background: var(--bg-secondary);
     opacity: 0.8;
     mix-blend-mode: hard-light;
     z-index: 2;
@@ -149,4 +151,81 @@
 .arrow-right {
     color: white;
     font-size: 1.5rem;
+}
+
+/* Responsive Queries */
+@media (max-width: 1200px) {
+    .brand-title {
+        font-size: 10rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .brand-title {
+        font-size: 8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        padding-top: 80px;
+        /* Fixed menu space */
+    }
+
+    .hero-left {
+        flex: none;
+        width: 100%;
+        padding: 4rem 5%;
+        text-align: left;
+    }
+
+    .brand-title {
+        font-size: 5rem;
+        letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-right {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+        order: -1;
+        /* Image first on mobile? Or usually text first. The user didn't specify, but often hero images go top or right. Let's keep text first (order 2 for right). */
+        order: 2;
+    }
+
+    .hero-image {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    .scroll-indicator {
+        left: 5%;
+        bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-left {
+        padding: 2rem 5%;
+    }
 }
